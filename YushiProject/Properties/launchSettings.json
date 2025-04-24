@@ -2,7 +2,7 @@
   "profiles": {
     "Debug with editor (Windows)": {
       "commandName": "Executable",
-      "executablePath": "tap.exe",
+      "executablePath": "C:\\Users\\ociya\\Source\\Repos\\BT2202A_Plugin\\YushiProject\\bin\\Release\\tap.exe",
       "commandLineArgs": "tui",
       "dotnetRunMessages": true
     },

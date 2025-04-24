@@ -28,7 +28,7 @@ namespace OpenTap.Plugins.PluginDevelopment
         public ScpiInstrumentExample()
         {
             // Set the name of the Scpi Instrument Example
-            Name = "BT2202A";
+            Name = "BT2202ATEST";
             // Set default values for properties / settings.
             VisaAddress = "TCPIP0::192.168.1.100::inst0::INSTR";
         }
