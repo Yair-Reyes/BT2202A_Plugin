@@ -92,7 +92,6 @@ namespace BT2202a
                 instrument.ScpiCommand($"CELL:ENABLE (@{cell_group}),1");
                 instrument.ScpiCommand($"CELL:INIT (@{cell_group})");
 
-                // Enable the output to start the sequence.
                 instrument.ScpiCommand("OUTP ON");
                 Log.Info("Output enabled.");
 
@@ -100,40 +99,20 @@ namespace BT2202a
                 // Wait for the specified charging time to elapse.
                 DateTime startTime = DateTime.Now;
 
-            while ((DateTime.Now - startTime).TotalSeconds < Time)
+                while ((DateTime.Now - startTime).TotalSeconds < Time)
                 {
                     try {
-                    // Query the instrument for voltage and current measurements.
-                    string statusResponse = instrument.ScpiQuery($"STATus:CELL:REPort? (@{cell_list[0] })");
-                    int statusValue = int.Parse(statusResponse);
-                    Log.Info($"Status Value: {statusValue}");
-                    Thread.Sleep(1000);
-                    if (statusValue == 2) {
+                        // Only check elapsed time without querying the device
+                        double elapsedSeconds = (DateTime.Now - startTime).TotalSeconds;
+                        Log.Info($"Time: {elapsedSeconds:F2}s of {Time}s completed");
+                        Thread.Sleep(1000);
+                    }
+                    catch {
                         UpgradeVerdict(Verdict.Fail);
                         instrument.ScpiCommand("OUTP OFF"); // Turn off output
                         return;
                     }
-
-                    string measuredVoltage = instrument.ScpiQuery($"MEAS:CELL:VOLT? (@{cell_list[0] })");
-                    string measuredCurrent = instrument.ScpiQuery($"MEAS:CELL:CURR? (@{cell_list[0] })");
-
-                    // Log the measurements.
-                    double elapsedSeconds = (DateTime.Now - startTime).TotalSeconds;
-                    //Log.Info($"Time: {elapsedSeconds:F2}s, Voltage: {measuredVoltage} V, Current: {measuredCurrent} A, Temperature: {temperature} C");
-                    Log.Info($"Time: {elapsedSeconds:F2}s, Voltage: {measuredVoltage} V, Current: {measuredCurrent} A");
-
-                    if (abortAllProcesses)
-                    {
-                        Log.Warning("Charging process aborted by user.");
-                        break;
-                    }
                 }
-                catch {
-                    UpgradeVerdict(Verdict.Fail);
-                    instrument.ScpiCommand("OUTP OFF"); // Turn off output
-                    return;
-                }
-             }
                
                     
                
