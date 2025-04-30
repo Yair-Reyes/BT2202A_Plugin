@@ -96,11 +96,8 @@ namespace BT2202a
                 //child steps
                 RunChildSteps();
 
-                // Enable and Initialize Cells
-                instrument.ScpiCommand($"CELL:ENABLE (@{cell_group}),1");
-                instrument.ScpiCommand($"CELL:INIT (@{cell_group})");
-
                 DateTime startTime = DateTime.Now;
+                bool cellsInitialized = false;
 
                 while ((DateTime.Now - startTime).TotalSeconds < Time)
                 {
@@ -108,6 +105,18 @@ namespace BT2202a
                         // Check elapsed time
                         double elapsedSeconds = (DateTime.Now - startTime).TotalSeconds;
                         Log.Info($"Time: {elapsedSeconds:F2}s of {Time}s completed");
+                        
+                        // Enable and Initialize Cells on the first iteration
+                        if (!cellsInitialized)
+                        {
+                            Log.Info("Enabling and initializing cells...");
+                            instrument.ScpiCommand($"CELL:ENABLE (@{cell_group}),1");
+                            instrument.ScpiCommand($"CELL:INIT (@{cell_group})");
+                            cellsInitialized = true;
+                            
+                            // Wait a bit after initialization before first measurement
+                            Thread.Sleep(500);
+                        }
                         
                         // Measure voltage and current if measurements are enabled
                         if (EnableMeasurements)
