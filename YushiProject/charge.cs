@@ -35,6 +35,12 @@ namespace BT2202a
         
         [Display("Enable Measurements", Order: 7, Description: "Enable voltage and current measurements during charging")]
         public bool EnableMeasurements { get; set; } = true;
+
+        [Display("Measurement Retry Count", Order: 8, Description: "Number of times to retry measurements if they fail")]
+        public int MeasurementRetries { get; set; } = 3;
+        
+        [Display("Measurement Timeout (ms)", Order: 9, Description: "Timeout in milliseconds for measurement queries")]
+        public int MeasurementTimeout { get; set; } = 5000;
         #endregion
 
         public string[] cell_list;
@@ -108,21 +114,38 @@ namespace BT2202a
                         {
                             try
                             {
-                                // Measure voltage for all channels in the group
-                                string voltageResponse = instrument.ScpiQuery($"MEAS:VOLT? (@{cell_group})");
+                                // Use our safe query method for measurements
+                                string voltageResponse = SafeScpiQuery($"MEAS:VOLT? (@{cell_group})");
+                                if (string.IsNullOrEmpty(voltageResponse))
+                                {
+                                    Log.Warning("Empty voltage response received");
+                                    voltageResponse = "0";
+                                }
                                 string[] voltageValues = voltageResponse.Trim().Split(',');
                                 
                                 // Measure current for all channels in the group
-                                string currentResponse = instrument.ScpiQuery($"MEAS:CURR? (@{cell_group})");
+                                string currentResponse = SafeScpiQuery($"MEAS:CURR? (@{cell_group})");
+                                if (string.IsNullOrEmpty(currentResponse))
+                                {
+                                    Log.Warning("Empty current response received");
+                                    currentResponse = "0";
+                                }
                                 string[] currentValues = currentResponse.Trim().Split(',');
                                 
                                 // Log measurements for each channel
-                                for (int i = 0; i < cell_list.Length && i < voltageValues.Length && i < currentValues.Length; i++)
+                                for (int i = 0; i < cell_list.Length && i < Math.Max(voltageValues.Length, 1) && i < Math.Max(currentValues.Length, 1); i++)
                                 {
-                                    if (double.TryParse(voltageValues[i], out double voltageValue) && 
-                                        double.TryParse(currentValues[i], out double currentValue))
+                                    string voltValue = i < voltageValues.Length ? voltageValues[i] : "0";
+                                    string currValue = i < currentValues.Length ? currentValues[i] : "0";
+                                    
+                                    if (double.TryParse(voltValue, out double voltageValue) && 
+                                        double.TryParse(currValue, out double currentValue))
                                     {
                                         Log.Info($"Channel {cell_list[i]}: Voltage = {voltageValue:F3}V, Current = {currentValue:F3}A");
+                                    }
+                                    else
+                                    {
+                                        Log.Warning($"Channel {cell_list[i]}: Failed to parse measurement values. Raw values: V={voltValue}, I={currValue}");
                                     }
                                 }
                             }
@@ -168,6 +191,84 @@ namespace BT2202a
             catch (Exception ex)
             {
                 Log.Error($"Error during PostPlanRun: {ex.Message}");
+            }
+        }
+
+        private string SafeScpiQuery(string query, int retries = 0)
+        {
+            // If we've reached the maximum number of retries, try alternate commands
+            if (retries >= MeasurementRetries)
+            {
+                if (query.StartsWith("MEAS:VOLT?"))
+                {
+                    // Try alternative voltage measurement command
+                    try
+                    {
+                        Log.Info("Trying alternative voltage measurement command");
+                        return instrument.ScpiQuery("READ:VOLT?");
+                    }
+                    catch
+                    {
+                        Log.Warning("Alternative voltage measurement also failed");
+                        return "0";
+                    }
+                }
+                else if (query.StartsWith("MEAS:CURR?"))
+                {
+                    // Try alternative current measurement command
+                    try
+                    {
+                        Log.Info("Trying alternative current measurement command");
+                        return instrument.ScpiQuery("READ:CURR?");
+                    }
+                    catch
+                    {
+                        Log.Warning("Alternative current measurement also failed");
+                        return "0";
+                    }
+                }
+                
+                // For other commands or if alternatives fail
+                Log.Warning($"Query '{query}' failed after {MeasurementRetries} retries");
+                return "0";
+            }
+
+            try
+            {
+                // Set a timeout for the query
+                var originalTimeout = instrument.IoTimeout;
+                instrument.IoTimeout = MeasurementTimeout;
+                
+                try
+                {
+                    // First try sending a clear command to clear any buffers
+                    instrument.ScpiCommand("*CLS");
+                    Thread.Sleep(50); // Small delay after clearing
+                    
+                    // Now send the actual query
+                    string response = instrument.ScpiQuery(query);
+                    
+                    // Reset the timeout to original value
+                    instrument.IoTimeout = originalTimeout;
+                    
+                    return response;
+                }
+                catch
+                {
+                    // Reset timeout even if there was an error
+                    instrument.IoTimeout = originalTimeout;
+                    throw;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Debug($"Query attempt {retries + 1} failed: {ex.Message}");
+                
+                // Wait a bit before retrying
+                Thread.Sleep(100 * (retries + 1));
+                
+                // Retry the query
+                return SafeScpiQuery(query, retries + 1);
             }
         }
 
