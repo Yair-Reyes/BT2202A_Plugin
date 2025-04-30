@@ -32,6 +32,9 @@ namespace BT2202a
 
         [Display("Cell group", Order: 6, Description: "Number of cells per cell group, asign as lowest:highest or comma separated list")]
         public string cell_group { get; set; }
+        
+        [Display("Enable Measurements", Order: 7, Description: "Enable voltage and current measurements during charging")]
+        public bool EnableMeasurements { get; set; } = true;
         #endregion
 
         public string[] cell_list;
@@ -93,22 +96,51 @@ namespace BT2202a
 
                 DateTime startTime = DateTime.Now;
 
-                {
                 while ((DateTime.Now - startTime).TotalSeconds < Time)
                 {
                     try {
-                        // Only check elapsed time without querying the device
+                        // Check elapsed time
                         double elapsedSeconds = (DateTime.Now - startTime).TotalSeconds;
                         Log.Info($"Time: {elapsedSeconds:F2}s of {Time}s completed");
+                        
+                        // Measure voltage and current if measurements are enabled
+                        if (EnableMeasurements)
+                        {
+                            try
+                            {
+                                // Measure voltage for all channels in the group
+                                string voltageResponse = instrument.ScpiQuery($"MEAS:VOLT? (@{cell_group})");
+                                string[] voltageValues = voltageResponse.Trim().Split(',');
+                                
+                                // Measure current for all channels in the group
+                                string currentResponse = instrument.ScpiQuery($"MEAS:CURR? (@{cell_group})");
+                                string[] currentValues = currentResponse.Trim().Split(',');
+                                
+                                // Log measurements for each channel
+                                for (int i = 0; i < cell_list.Length && i < voltageValues.Length && i < currentValues.Length; i++)
+                                {
+                                    if (double.TryParse(voltageValues[i], out double voltageValue) && 
+                                        double.TryParse(currentValues[i], out double currentValue))
+                                    {
+                                        Log.Info($"Channel {cell_list[i]}: Voltage = {voltageValue:F3}V, Current = {currentValue:F3}A");
+                                    }
+                                }
+                            }
+                            catch (Exception measEx)
+                            {
+                                Log.Warning($"Measurement error: {measEx.Message}");
+                            }
+                        }
+                        
+                        // Wait for 1 second before next measurement
                         Thread.Sleep(1000);
                     }
-                    catch {
+                    catch (Exception loopEx) {
+                        Log.Error($"Error during measurement loop: {loopEx.Message}");
                         UpgradeVerdict(Verdict.Fail);
                         instrument.ScpiCommand("OUTP OFF"); // Turn off output
                         return;
                     }
-                }
-              
                 }
 
                 // Turn off the output after the charging process is complete.
@@ -137,7 +169,6 @@ namespace BT2202a
             {
                 Log.Error($"Error during PostPlanRun: {ex.Message}");
             }
-
         }
 
         public override void PostPlanRun()
