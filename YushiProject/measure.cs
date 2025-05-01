@@ -101,6 +101,25 @@ namespace BT2202a
                     }
                 }
 
+                // Get and log the final voltage and current measurements before turning off the output
+                try {
+                    string finalVoltage = instrument.ScpiQuery($"MEAS:CELL:VOLT? (@{cell_group})");
+                    string finalCurrent = instrument.ScpiQuery($"MEAS:CELL:CURR? (@{cell_group})");
+                    
+                    // Log the final measurements with a clear indication that these are the final values
+                    Log.Info("======= FINAL MEASUREMENTS =======");
+                    Log.Info($"Final Voltage: {finalVoltage} V");
+                    Log.Info($"Final Current: {finalCurrent} A");
+                    Log.Info("==================================");
+                    
+                    // Add these values to the test results as well
+                    Results.Publish("Final Voltage (V)", finalVoltage);
+                    Results.Publish("Final Current (A)", finalCurrent);
+                }
+                catch (Exception ex) {
+                    Log.Error($"Error getting final measurements: {ex.Message}");
+                }
+
                 // Turn off the output after the charging process is complete.
                 instrument.ScpiCommand("OUTP OFF");
                 Log.Info("Measure process completed and output disabled.");
