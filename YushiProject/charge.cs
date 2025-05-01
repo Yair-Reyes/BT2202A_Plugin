@@ -41,6 +41,9 @@ namespace BT2202a
         
         [Display("Measurement Timeout (ms)", Order: 9, Description: "Timeout in milliseconds for measurement queries")]
         public int MeasurementTimeout { get; set; } = 5000;
+
+        [Display("Measurement Pause (ms)", Order: 10, Description: "Pause duration before taking measurements (milliseconds)")]
+        public int MeasurementPauseDuration { get; set; } = 200;
         #endregion
 
         public string[] cell_list;
@@ -123,6 +126,13 @@ namespace BT2202a
                         {
                             try
                             {
+                                // Pause the charging process before measurements
+                                Log.Info($"Pausing for {MeasurementPauseDuration}ms before measurements");
+                                
+                                // Temporarily pause charging to get accurate measurements
+                                instrument.ScpiCommand("OUTP:PAUS");
+                                Thread.Sleep(MeasurementPauseDuration);
+                                
                                 // Use our safe query method for measurements
                                 string voltageResponse = SafeScpiQuery($"MEAS:VOLT? (@{cell_group})");
                                 if (string.IsNullOrEmpty(voltageResponse))
@@ -140,6 +150,9 @@ namespace BT2202a
                                     currentResponse = "0";
                                 }
                                 string[] currentValues = currentResponse.Trim().Split(',');
+                                
+                                // Resume charging process after measurements
+                                instrument.ScpiCommand("OUTP:RES");
                                 
                                 // Log measurements for each channel
                                 for (int i = 0; i < cell_list.Length && i < Math.Max(voltageValues.Length, 1) && i < Math.Max(currentValues.Length, 1); i++)
@@ -161,6 +174,8 @@ namespace BT2202a
                             catch (Exception measEx)
                             {
                                 Log.Warning($"Measurement error: {measEx.Message}");
+                                // Try to resume charging if an error occurred during measurements
+                                try { instrument.ScpiCommand("OUTP:RES"); } catch { }
                             }
                         }
                         
