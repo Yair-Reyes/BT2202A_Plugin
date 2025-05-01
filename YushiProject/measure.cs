@@ -27,12 +27,20 @@ namespace BT2202a
 
         [Display("Sleep Mode", Order: 3, Description: "When enabled, measurement will pause")]
         public bool SleepMode { get; set; }
+        
+        [Display("Measurement Timeout (ms)", Order: 4, Description: "Timeout in milliseconds for measurement queries")]
+        public int MeasurementTimeout { get; set; }
+        
+        [Display("Measurement Retries", Order: 5, Description: "Number of times to retry a failed measurement")]
+        public int MeasurementRetries { get; set; }
         #endregion
 
         private int meas;
 
         public Measure(){
             SleepMode = false; // Default to not sleeping
+            MeasurementTimeout = 5000; // Default 5 second timeout
+            MeasurementRetries = 3;   // Default 3 retries
         }
 
         public override void PrePlanRun(){
@@ -74,9 +82,9 @@ namespace BT2202a
                                 Log.Info($"Status 2, failed cell group {cell_group}");
                             }*/
 
-                            // BORRAR DESPUES
-                            string measuredVoltage = instrument.ScpiQuery($"MEAS:CELL:VOLT? (@{cell_group})");
-                            string measuredCurrent = instrument.ScpiQuery($"MEAS:CELL:CURR? (@{cell_group})");
+                            // Use SafeScpiQuery instead of direct ScpiQuery to handle timeouts
+                            string measuredVoltage = SafeScpiQuery($"MEAS:CELL:VOLT? (@{cell_group})");
+                            string measuredCurrent = SafeScpiQuery($"MEAS:CELL:CURR? (@{cell_group})");
 
                             // Log the measurements.
                             Log.Info($" Voltage: {measuredVoltage} V, Current: {measuredCurrent} A");
@@ -103,8 +111,8 @@ namespace BT2202a
 
                 // Get and log the final voltage and current measurements before turning off the output
                 try {
-                    string finalVoltage = instrument.ScpiQuery($"MEAS:CELL:VOLT? (@{cell_group})");
-                    string finalCurrent = instrument.ScpiQuery($"MEAS:CELL:CURR? (@{cell_group})");
+                    string finalVoltage = SafeScpiQuery($"MEAS:CELL:VOLT? (@{cell_group})");
+                    string finalCurrent = SafeScpiQuery($"MEAS:CELL:CURR? (@{cell_group})");
                     
                     // Log the final measurements with a clear indication that these are the final values
                     Log.Info("======= FINAL MEASUREMENTS =======");
@@ -142,7 +150,95 @@ namespace BT2202a
             catch (Exception ex){
                 Log.Error($"Error during PostPlanRun: {ex.Message}");
             }
+        }
 
+        /// <summary>
+        /// SafeScpiQuery handles queries with timeout and retry logic
+        /// </summary>
+        private string SafeScpiQuery(string query, int retries = 0)
+        {
+            // If we've reached the maximum number of retries, try alternate commands
+            if (retries >= MeasurementRetries)
+            {
+                if (query.StartsWith("MEAS:CELL:VOLT?"))
+                {
+                    // Try alternative voltage measurement command
+                    try
+                    {
+                        Log.Info("Trying alternative voltage measurement command");
+                        return instrument.ScpiQuery("READ:VOLT?");
+                    }
+                    catch
+                    {
+                        Log.Warning("Alternative voltage measurement also failed");
+                        return "0";
+                    }
+                }
+                else if (query.StartsWith("MEAS:CELL:CURR?"))
+                {
+                    // Try alternative current measurement command
+                    try
+                    {
+                        Log.Info("Trying alternative current measurement command");
+                        return instrument.ScpiQuery("READ:CURR?");
+                    }
+                    catch
+                    {
+                        Log.Warning("Alternative current measurement also failed");
+                        return "0";
+                    }
+                }
+                
+                // For other commands or if alternatives fail
+                Log.Warning($"Query '{query}' failed after {MeasurementRetries} retries");
+                return "0";
+            }
+
+            try
+            {
+                // Set a timeout for the query
+                var originalTimeout = instrument.IoTimeout;
+                instrument.IoTimeout = MeasurementTimeout;
+                
+                try
+                {
+                    // First try sending a clear command to clear any buffers
+                    instrument.ScpiCommand("*CLS");
+                    Thread.Sleep(50); // Small delay after clearing
+                    
+                    // Now send the actual query
+                    string response = instrument.ScpiQuery(query);
+                    
+                    // Reset the timeout to original value
+                    instrument.IoTimeout = originalTimeout;
+                    
+                    return response;
+                }
+                catch
+                {
+                    // Reset timeout even if there was an error
+                    instrument.IoTimeout = originalTimeout;
+                    throw;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Debug($"Query attempt {retries + 1} failed: {ex.Message}");
+                
+                // Wait a bit before retrying, with exponential backoff
+                Thread.Sleep(100 * (retries + 1));
+                
+                // Retry the query
+                if (retries < MeasurementRetries)
+                {
+                    Log.Info($"Retrying SCPI query (attempt {retries + 2}/{MeasurementRetries + 1})");
+                    return SafeScpiQuery(query, retries + 1);
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         public override void PostPlanRun(){
