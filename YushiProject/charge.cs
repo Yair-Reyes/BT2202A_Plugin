@@ -101,6 +101,7 @@ namespace BT2202a
 
                 DateTime startTime = DateTime.Now;
                 bool cellsInitialized = false;
+                bool chargingActive = false;
 
                 while ((DateTime.Now - startTime).TotalSeconds < Time)
                 {
@@ -126,12 +127,15 @@ namespace BT2202a
                         {
                             try
                             {
-                                // Pause the charging process before measurements
-                                Log.Info($"Pausing for {MeasurementPauseDuration}ms before measurements");
+                                // Abort the charging process before measurements
+                                Log.Info("Aborting charging to take measurements");
                                 
-                                // Temporarily pause charging to get accurate measurements
-                                instrument.ScpiCommand("OUTP:PAUS");
-                                Thread.Sleep(MeasurementPauseDuration);
+                                if (chargingActive)
+                                {
+                                    // Abort charging completely to get accurate measurements
+                                    instrument.ScpiCommand("OUTP OFF");
+                                    Thread.Sleep(MeasurementPauseDuration);
+                                }
                                 
                                 // Use our safe query method for measurements
                                 string voltageResponse = SafeScpiQuery($"MEAS:VOLT? (@{cell_group})");
@@ -151,9 +155,6 @@ namespace BT2202a
                                 }
                                 string[] currentValues = currentResponse.Trim().Split(',');
                                 
-                                // Resume charging process after measurements
-                                instrument.ScpiCommand("OUTP:RES");
-                                
                                 // Log measurements for each channel
                                 for (int i = 0; i < cell_list.Length && i < Math.Max(voltageValues.Length, 1) && i < Math.Max(currentValues.Length, 1); i++)
                                 {
@@ -170,12 +171,29 @@ namespace BT2202a
                                         Log.Warning($"Channel {cell_list[i]}: Failed to parse measurement values. Raw values: V={voltValue}, I={currValue}");
                                     }
                                 }
+                                
+                                // Restart charging after measurements
+                                Log.Info("Restarting charging after measurements");
+                                instrument.ScpiCommand("OUTP ON");
+                                chargingActive = true;
+                                
+                                // Re-initialize cells after measurements
+                                instrument.ScpiCommand($"CELL:INIT (@{cell_group})");
                             }
                             catch (Exception measEx)
                             {
                                 Log.Warning($"Measurement error: {measEx.Message}");
-                                // Try to resume charging if an error occurred during measurements
-                                try { instrument.ScpiCommand("OUTP:RES"); } catch { }
+                                // Ensure charging is resumed even if there was an error
+                                try 
+                                { 
+                                    instrument.ScpiCommand("OUTP ON"); 
+                                    chargingActive = true;
+                                    instrument.ScpiCommand($"CELL:INIT (@{cell_group})");
+                                } 
+                                catch (Exception resumeEx) 
+                                { 
+                                    Log.Error($"Error resuming charging: {resumeEx.Message}");
+                                }
                             }
                         }
                         
