@@ -11,6 +11,8 @@
 //WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 //See the License for the specific language governing permissions and
 //limitations under the License.
+
+//==========================================================MariosVersion============================================================================
 using System;
 using OpenTap;
 
@@ -20,7 +22,6 @@ using OpenTap;
 namespace OpenTap.Plugins.PluginDevelopment
 {
      [Display("BT2202A", Group: "OpenTap.Plugins.Carga", Description: "Equipo para carga y descarga")]
-    public class BT2202A : ScpiInstrument
     public class ScpiInstrumentExample : ScpiInstrument
     {
         // ScpiInstuments provides useful settings for VisaAddress, IdnString and others.
@@ -31,7 +32,7 @@ namespace OpenTap.Plugins.PluginDevelopment
             // Set the name of the Scpi Instrument Example
             Name = "BT2202A";
             // Set default values for properties / settings.
-            VisaAddress = "TCPIP0::10.10.10.10::inst0::INSTR" ;
+            VisaAddress = "TCPIP0::192.168.1.100::inst0::INSTR";
         }
 
         /// <summary>
