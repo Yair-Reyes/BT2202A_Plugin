@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Package InfoLink="" Date="11/04/2024 18:25:23" Name="BT2202a" Version="0.2.0-alpha" Architecture="AnyCPU" OS="Windows,Linux" xmlns="http://opentap.io/schemas/package">
-  <Hash>N9NzeN2o7kekjt-BusR0h69ilQ8</Hash>
+<Package InfoLink="" Date="11/21/2024 19:37:56" Name="BT2202a" Version="0.2.0-alpha" Architecture="AnyCPU" OS="Windows,Linux" xmlns="http://opentap.io/schemas/package">
+  <Hash>A9Qw0CUti_1tW9e7Czp5hy0nuvs</Hash>
   <Description>This is my OpenTAP plugin package.</Description>
   <Dependencies>
     <PackageDependency Package="OpenTAP" Version="^9.26.1+3d268116" />
@@ -38,6 +38,26 @@
             <String>instrument</String>
           </Groups>
         </Plugin>
+        <Plugin Type="BT2202a.Measure" BaseType="Test Step">
+          <Name>Measure</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Measures voltage and current for step duration.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>instrument</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="BT2202a.Reset" BaseType="Test Step">
+          <Name>Reset</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>resets</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>instrument</String>
+          </Groups>
+        </Plugin>
         <Plugin Type="OpenTap.Plugins.PluginDevelopment.ScpiInstrumentExample" BaseType="Instrument">
           <Name>BT2202A</Name>
           <Order>-10000</Order>
@@ -49,7 +69,7 @@
           </Groups>
         </Plugin>
       </Plugins>
-      <Hash>F720B8042A6F5D5AF5855E1E714DA74D66412C77</Hash>
+      <Hash>793146B211EA4499DD9B74F1A07E8C440B17C81D</Hash>
     </File>
   </Files>
 </Package>
