@@ -1,0 +1,73 @@
+﻿2025-04-03 20:46:16.582418 ; Session        ; Debug       ; Session log loaded as 'C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\SessionLogs\tap 2025-04-03 20-46-16.txt'. [1.85 ms]
+2025-04-03 20:46:16.609346 ; Session        ; Debug       ; Deleting log file: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\SessionLogs\SessionLog 2025-04-03 12-02-18.txt
+2025-04-03 20:46:16.616327 ; Session        ; Debug       ; Running '.\tap  package create "C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\\package.xml" --install' in 'C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release'.
+2025-04-03 20:46:16.652231 ; AssemblyFinder ; Debug       ; Found 17/38 assembly files. [10.4 ms]
+2025-04-03 20:46:16.677165 ; Resolver       ; Debug       ; Found match for System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Collections.Immutable.1.2.3.0\System.Collections.Immutable.dll
+2025-04-03 20:46:16.832703 ; Resolver       ; Debug       ; Found match for System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Reflection.Metadata.1.4.3.0\System.Reflection.Metadata.dll
+2025-04-03 20:46:16.955663 ; Searcher       ; Debug       ; Ordered 17 assemblies according to references. [259 ms]
+2025-04-03 20:46:17.023482 ; Searcher       ; Warning     ; Plugin with duplicate type name OpenTap.Plugins.PluginDevelopment.ScpiInstrumentExample defined in 'BT2202a' and 'BT2202A'
+2025-04-03 20:46:17.029466 ; PluginManager  ; Debug       ; Found 5 plugin assemblies containing 183 plugin types. [336 ms]
+2025-04-03 20:46:17.030463 ; PluginManager  ; Debug       ; Found version 9.26.1+3d268116  of OpenTap.dll
+2025-04-03 20:46:17.030463 ; PluginManager  ; Debug       ; Found version 0.0.0            of BT2202a.dll
+2025-04-03 20:46:17.030463 ; PluginManager  ; Debug       ; Found version 9.26.1+3d268116  of OpenTap.Package.dll
+2025-04-03 20:46:17.030463 ; PluginManager  ; Debug       ; Found version 0.0.0            of BT2202a.dll
+2025-04-03 20:46:17.030463 ; PluginManager  ; Debug       ; Found version 9.26.1+3d268116  of OpenTap.Plugins.BasicSteps.dll
+2025-04-03 20:46:17.030463 ; PluginManager  ; Debug       ; Searched 17 Assemblies. [340 ms]
+2025-04-03 20:46:17.038442 ; AssemblyData   ; Debug       ; Loaded OpenTap. [490 us]
+2025-04-03 20:46:17.052439 ; SystemInfo     ; Debug       ; Microsoft Windows 10.0.19045 X64
+2025-04-03 20:46:17.052439 ; SystemInfo     ; Debug       ; .NET Framework 4.8.9290.0
+2025-04-03 20:46:17.053430 ; SystemInfo     ; Debug       ; OpenTAP Engine 9.26.1+3d268116 X64
+2025-04-03 20:46:17.057419 ; AssemblyData   ; Debug       ; Loaded OpenTap.Package. [4.81 ms]
+2025-04-03 20:46:17.066395 ; Settings       ; Debug       ; No settings file exists for EngineSettings. A new instance with default values has been created. [7.92 ms]
+2025-04-03 20:46:17.094294 ; AssemblyData   ; Debug       ; Loaded OpenTap.Plugins.BasicSteps. [5.40 ms]
+2025-04-03 20:46:17.106262 ; Session        ; Debug       ; Session log loaded as 'C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\SessionLogs\SessionLog 2025-04-03 20-46-16.txt'. [15.9 ms]
+2025-04-03 20:46:17.178069 ; AssemblyData   ; Debug       ; Loaded mscorlib. [1.10 us]
+2025-04-03 20:46:17.255861 ; CLI            ; Debug       ; Executing CLI action: package \ create
+2025-04-03 20:46:17.269825 ; VariableExpander ; Debug       ; Initialized variable expander:
+2025-04-03 20:46:17.286779 ; Package        ; Debug       ; Package preprocessing completed. [21.5 ms]
+2025-04-03 20:46:17.291766 ; Installation   ; Debug       ; BT2202a                  - 0.2.0-alpha
+2025-04-03 20:46:17.291766 ; Installation   ; Debug       ; OpenTAP                  - 9.26.1+3d268116
+2025-04-03 20:46:17.291766 ; Installation   ; Debug       ; PathWave License Manager - 7.4.1+efeba870
+2025-04-03 20:46:17.293760 ; Resolver       ; Debug       ; Found match for DotNet.Glob, Version=3.0.1.0, Culture=neutral, PublicKeyToken=b68cc888b4f632d1 in C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\DotNet.Glob.3.0.1.0\DotNet.Glob.dll
+2025-04-03 20:46:17.314703 ; Searcher       ; Warning     ; Multiple assemblies of different versions named Microsoft.Bcl.AsyncInterfaces exists 
+2025-04-03 20:46:17.314703 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll version: 4.700.19.46214
+2025-04-03 20:46:17.315701 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\Microsoft.Bcl.AsyncInterfaces.1.0.0.0\Microsoft.Bcl.AsyncInterfaces.dll version: 4.700.19.56404
+2025-04-03 20:46:17.316698 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Buffers exists 
+2025-04-03 20:46:17.316698 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Buffers.dll version: 4.6.26515.06
+2025-04-03 20:46:17.316698 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Buffers.4.0.3.0\System.Buffers.dll version: 4.6.28619.01
+2025-04-03 20:46:17.317697 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Memory exists 
+2025-04-03 20:46:17.317697 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Memory.dll version: 4.6.27617.02
+2025-04-03 20:46:17.318693 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Memory.4.0.1.1\System.Memory.dll version: 4.6.28619.01
+2025-04-03 20:46:17.319690 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Runtime.CompilerServices.Unsafe exists 
+2025-04-03 20:46:17.320688 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Runtime.CompilerServices.Unsafe.dll version: 4.700.19.46214
+2025-04-03 20:46:17.320688 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Runtime.CompilerServices.Unsafe.4.0.6.0\System.Runtime.CompilerServices.Unsafe.dll version: 4.700.20.12001
+2025-04-03 20:46:17.321685 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Text.Encodings.Web exists 
+2025-04-03 20:46:17.321685 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Text.Encodings.Web.dll version: 4.700.19.46214
+2025-04-03 20:46:17.322682 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Text.Encodings.Web.4.0.5.1\System.Text.Encodings.Web.dll version: 4.700.21.11602
+2025-04-03 20:46:17.323680 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Text.Json exists 
+2025-04-03 20:46:17.323680 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Text.Json.dll version: 4.700.19.46214
+2025-04-03 20:46:17.323680 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Text.Json.4.0.1.2\System.Text.Json.dll version: 4.700.20.21406
+2025-04-03 20:46:17.324677 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Threading.Tasks.Extensions exists 
+2025-04-03 20:46:17.324677 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Threading.Tasks.Extensions.dll version: 4.6.27129.04
+2025-04-03 20:46:17.325674 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Threading.Tasks.Extensions.4.2.0.1\System.Threading.Tasks.Extensions.dll version: 4.6.28619.01
+2025-04-03 20:46:17.335648 ; Searcher       ; Debug       ; Ordered 38 assemblies according to references. [22.7 ms]
+2025-04-03 20:46:17.410448 ; Package        ; Information ; Satisfying assembly reference to OpenTap by adding dependency on package OpenTAP
+2025-04-03 20:46:17.410448 ; Package        ; Information ; Satisfying assembly reference to System.Text.Json by adding dependency on package OpenTAP
+2025-04-03 20:46:17.410448 ; Package        ; Warning     ; Version of System.Text.Json in OpenTAP is different from the version referenced in this package (4.0.0.0 vs 4.0.1.2).
+2025-04-03 20:46:17.410448 ; Package        ; Warning     ; Consider changing your version of System.Text.Json to 4.0.1.2 to match that in OpenTAP.
+2025-04-03 20:46:17.410448 ; Package        ; Information ; Adding dependency on package 'OpenTAP' version 9.26.1+3d268116
+2025-04-03 20:46:17.419424 ; Package        ; Debug       ; Using temporary folder at 'C:\Users\marsa\AppData\Local\Temp\tmqbep2b.i5e'
+2025-04-03 20:46:17.423413 ; Package        ; Debug       ; Updating version info for 'BT2202a.dll' [1.42 ms]
+2025-04-03 20:46:17.429398 ; Resolver       ; Debug       ; Found match for Mono.Cecil, Version=0.10.1.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e in C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\Mono.Cecil.0.10.1.0\Mono.Cecil.dll
+2025-04-03 20:46:17.958813 ; Package        ; Information ; Updated assembly version info using Mono method. [536 ms]
+2025-04-03 20:46:17.964797 ; Package        ; Debug       ; Available custom actions for 'create' stage. (2 actions: OpenTap.Package.IncludePackageDependencies, OpenTap.Package.FileHashPackageAction)
+2025-04-03 20:46:17.967788 ; Package        ; Information ; Package action IncludePackageDependencies completed [2.99 ms]
+2025-04-03 20:46:18.042801 ; Package        ; Information ; Package action FileHashPackageAction completed [74.4 ms]
+2025-04-03 20:46:18.042801 ; Package        ; Information ; Creating OpenTAP package.
+2025-04-03 20:46:18.067739 ; Package        ; Debug       ; Compressed 'C:\Users\marsa\AppData\Local\Temp\tmqbep2b.i5e\Versioned\BT2202a.dll' [16.1 ms]
+2025-04-03 20:46:18.155015 ; Package        ; Debug       ; Verifying package integrity...
+2025-04-03 20:46:18.184937 ; Package        ; Debug       ; Verified metadata integrity. [30.0 ms]
+2025-04-03 20:46:18.185933 ; Package        ; Debug       ; Verified archive integrity. [30.3 ms]
+2025-04-03 20:46:18.188925 ; PackageAction  ; Information ; OpenTAP plugin package 'BT2202a.0.2.0-alpha.TapPackage' containing 'BT2202a' successfully created.
+2025-04-03 20:46:18.189922 ; PackageAction  ; Information ; Installed 'BT2202a' (C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Packages\BT2202a\package.xml)
+2025-04-03 20:46:18.189922 ; CLI            ; Debug       ; CLI action returned exit code: 0 [934 ms]

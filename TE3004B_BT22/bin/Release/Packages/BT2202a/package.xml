@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package InfoLink="" Date="05/14/2025 01:54:07" Name="BT2202a" Version="0.2.0-alpha" Architecture="AnyCPU" OS="Windows,Linux" xmlns="http://opentap.io/schemas/package">
+  <Hash>wyGjDC4b8FoLBVXtPT26aeyrtOM</Hash>
+  <Description>This is my OpenTAP plugin package.</Description>
+  <Dependencies>
+    <PackageDependency Package="OpenTAP" Version="^9.26.1+3d268116" />
+  </Dependencies>
+  <Files>
+    <File Path="Packages/BT2202a/BT2202a.dll">
+      <Plugins>
+        <Plugin Type="childStep.DurationTestStep" BaseType="Test Step">
+          <Name>Test</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Enables Pass/Fail.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>BT22</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="BT2202a.Charge" BaseType="Test Step">
+          <Name>Charge</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Charges a device with specified voltage and current for a set duration.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>BT22</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="BT2202a.Discharge" BaseType="Test Step">
+          <Name>Discharge</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Discharges a device with specified voltage and current for a set duration.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>BT22</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="BT2202a.Measure" BaseType="Test Step">
+          <Name>Measure</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Measures voltage and current for step duration.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>BT22</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="BT2202a.Reset" BaseType="Test Step">
+          <Name>Reset</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>resets</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>BT22</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="OpenTap.Plugins.PluginDevelopment.ScpiInstrumentExample" BaseType="Instrument">
+          <Name>BT2202A</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Equipo para carga y descarga</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>OpenTap.Plugins.Carga</String>
+          </Groups>
+        </Plugin>
+      </Plugins>
+      <Hash>7E5815F6C0C2277659F14705F1E0B7CE43AD7F14</Hash>
+    </File>
+  </Files>
+</Package>

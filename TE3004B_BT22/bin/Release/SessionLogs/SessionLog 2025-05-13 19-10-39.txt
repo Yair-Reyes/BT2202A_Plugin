@@ -1,0 +1,72 @@
+﻿2025-05-13 19:10:39.906800 ; Session        ; Debug       ; Session log loaded as 'C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\SessionLogs\tap 2025-05-13 19-10-39.txt'. [1.88 ms]
+2025-05-13 19:10:39.936720 ; Session        ; Debug       ; Running '.\tap  package create "C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\\package.xml" --install' in 'C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release'.
+2025-05-13 19:10:39.973621 ; AssemblyFinder ; Debug       ; Found 18/39 assembly files. [12.2 ms]
+2025-05-13 19:10:39.994566 ; Resolver       ; Debug       ; Found match for System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Collections.Immutable.1.2.3.0\System.Collections.Immutable.dll
+2025-05-13 19:10:40.126213 ; Resolver       ; Debug       ; Found match for System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Reflection.Metadata.1.4.3.0\System.Reflection.Metadata.dll
+2025-05-13 19:10:40.656795 ; Searcher       ; Debug       ; Ordered 18 assemblies according to references. [645 ms]
+2025-05-13 19:10:40.720624 ; Searcher       ; Warning     ; Plugin with duplicate type name OpenTap.Plugins.PluginDevelopment.ScpiInstrumentExample defined in 'BT2202a' and 'BT2202A'
+2025-05-13 19:10:40.725611 ; PluginManager  ; Debug       ; Found 5 plugin assemblies containing 183 plugin types. [717 ms]
+2025-05-13 19:10:40.726608 ; PluginManager  ; Debug       ; Found version 9.26.1+3d268116  of OpenTap.dll
+2025-05-13 19:10:40.726608 ; PluginManager  ; Debug       ; Found version 0.0.0            of BT2202a.dll
+2025-05-13 19:10:40.726608 ; PluginManager  ; Debug       ; Found version 9.26.1+3d268116  of OpenTap.Package.dll
+2025-05-13 19:10:40.726608 ; PluginManager  ; Debug       ; Found version 0.0.0            of BT2202a.dll
+2025-05-13 19:10:40.726608 ; PluginManager  ; Debug       ; Found version 9.26.1+3d268116  of OpenTap.Plugins.BasicSteps.dll
+2025-05-13 19:10:40.726608 ; PluginManager  ; Debug       ; Searched 18 Assemblies. [720 ms]
+2025-05-13 19:10:40.736597 ; AssemblyData   ; Debug       ; Loaded OpenTap. [479 us]
+2025-05-13 19:10:40.752539 ; SystemInfo     ; Debug       ; Microsoft Windows 10.0.19045 X64
+2025-05-13 19:10:40.752539 ; SystemInfo     ; Debug       ; .NET Framework 4.8.9310.0
+2025-05-13 19:10:40.752539 ; SystemInfo     ; Debug       ; OpenTAP Engine 9.26.1+3d268116 X64
+2025-05-13 19:10:40.757525 ; AssemblyData   ; Debug       ; Loaded OpenTap.Package. [4.88 ms]
+2025-05-13 19:10:40.769494 ; Settings       ; Debug       ; No settings file exists for EngineSettings. A new instance with default values has been created. [12.6 ms]
+2025-05-13 19:10:40.810384 ; Session        ; Debug       ; Session log loaded as 'C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\SessionLogs\SessionLog 2025-05-13 19-10-39.txt'. [14.4 ms]
+2025-05-13 19:10:40.832326 ; AssemblyData   ; Debug       ; Loaded OpenTap.Plugins.BasicSteps. [6.02 ms]
+2025-05-13 19:10:40.907075 ; AssemblyData   ; Debug       ; Loaded mscorlib. [600 ns]
+2025-05-13 19:10:40.945530 ; CLI            ; Debug       ; Executing CLI action: package \ create
+2025-05-13 19:10:40.961487 ; VariableExpander ; Debug       ; Initialized variable expander:
+2025-05-13 19:10:40.974453 ; Package        ; Debug       ; Package preprocessing completed. [17.4 ms]
+2025-05-13 19:10:41.015344 ; Installation   ; Debug       ; BT2202a                  - 0.2.0-alpha
+2025-05-13 19:10:41.015344 ; Installation   ; Debug       ; OpenTAP                  - 9.26.1+3d268116
+2025-05-13 19:10:41.015344 ; Installation   ; Debug       ; PathWave License Manager - 7.4.1+efeba870
+2025-05-13 19:10:41.067733 ; Resolver       ; Debug       ; Found match for DotNet.Glob, Version=3.0.1.0, Culture=neutral, PublicKeyToken=b68cc888b4f632d1 in C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\DotNet.Glob.3.0.1.0\DotNet.Glob.dll
+2025-05-13 19:10:41.092667 ; Searcher       ; Warning     ; Multiple assemblies of different versions named Microsoft.Bcl.AsyncInterfaces exists 
+2025-05-13 19:10:41.092667 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll version: 4.700.19.46214
+2025-05-13 19:10:41.092667 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\Microsoft.Bcl.AsyncInterfaces.1.0.0.0\Microsoft.Bcl.AsyncInterfaces.dll version: 4.700.19.56404
+2025-05-13 19:10:41.094661 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Buffers exists 
+2025-05-13 19:10:41.094661 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Buffers.dll version: 4.6.26515.06
+2025-05-13 19:10:41.095658 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Buffers.4.0.3.0\System.Buffers.dll version: 4.6.28619.01
+2025-05-13 19:10:41.096655 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Memory exists 
+2025-05-13 19:10:41.097653 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Memory.dll version: 4.6.27617.02
+2025-05-13 19:10:41.097653 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Memory.4.0.1.1\System.Memory.dll version: 4.6.28619.01
+2025-05-13 19:10:41.107627 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Runtime.CompilerServices.Unsafe exists 
+2025-05-13 19:10:41.107627 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Runtime.CompilerServices.Unsafe.dll version: 4.700.19.46214
+2025-05-13 19:10:41.108624 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Runtime.CompilerServices.Unsafe.4.0.6.0\System.Runtime.CompilerServices.Unsafe.dll version: 4.700.20.12001
+2025-05-13 19:10:41.109622 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Text.Encodings.Web exists 
+2025-05-13 19:10:41.110618 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Text.Encodings.Web.dll version: 4.700.19.46214
+2025-05-13 19:10:41.110618 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Text.Encodings.Web.4.0.5.1\System.Text.Encodings.Web.dll version: 4.700.21.11602
+2025-05-13 19:10:41.112614 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Text.Json exists 
+2025-05-13 19:10:41.112614 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Text.Json.dll version: 4.700.19.46214
+2025-05-13 19:10:41.113610 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Text.Json.4.0.1.2\System.Text.Json.dll version: 4.700.20.21406
+2025-05-13 19:10:41.114608 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Threading.Tasks.Extensions exists 
+2025-05-13 19:10:41.115604 ; Searcher       ; Debug       ; Assembly 1: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Threading.Tasks.Extensions.dll version: 4.6.27129.04
+2025-05-13 19:10:41.115604 ; Searcher       ; Debug       ; Assembly 2: C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Threading.Tasks.Extensions.4.2.0.1\System.Threading.Tasks.Extensions.dll version: 4.6.28619.01
+2025-05-13 19:10:41.515103 ; Searcher       ; Debug       ; Ordered 39 assemblies according to references. [426 ms]
+2025-05-13 19:10:41.587909 ; Package        ; Information ; Satisfying assembly reference to OpenTap by adding dependency on package OpenTAP
+2025-05-13 19:10:41.587909 ; Package        ; Information ; Satisfying assembly reference to System.Text.Json by adding dependency on package OpenTAP
+2025-05-13 19:10:41.587909 ; Package        ; Warning     ; Version of System.Text.Json in OpenTAP is different from the version referenced in this package (4.0.0.0 vs 4.0.1.2).
+2025-05-13 19:10:41.587909 ; Package        ; Warning     ; Consider changing your version of System.Text.Json to 4.0.1.2 to match that in OpenTAP.
+2025-05-13 19:10:41.587909 ; Package        ; Information ; Adding dependency on package 'OpenTAP' version 9.26.1+3d268116
+2025-05-13 19:10:41.596884 ; Package        ; Debug       ; Using temporary folder at 'C:\Users\marsa\AppData\Local\Temp\lhue1h1o.bos'
+2025-05-13 19:10:41.601423 ; Package        ; Debug       ; Updating version info for 'BT2202a.dll' [1.23 ms]
+2025-05-13 19:10:41.605413 ; Resolver       ; Debug       ; Found match for Mono.Cecil, Version=0.10.1.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e in C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\Mono.Cecil.0.10.1.0\Mono.Cecil.dll
+2025-05-13 19:10:42.111679 ; Package        ; Information ; Updated assembly version info using Mono method. [511 ms]
+2025-05-13 19:10:42.117662 ; Package        ; Debug       ; Available custom actions for 'create' stage. (2 actions: OpenTap.Package.IncludePackageDependencies, OpenTap.Package.FileHashPackageAction)
+2025-05-13 19:10:42.120654 ; Package        ; Information ; Package action IncludePackageDependencies completed [3.17 ms]
+2025-05-13 19:10:42.201032 ; Package        ; Information ; Package action FileHashPackageAction completed [80.4 ms]
+2025-05-13 19:10:42.201032 ; Package        ; Information ; Creating OpenTAP package.
+2025-05-13 19:10:42.221976 ; Package        ; Debug       ; Compressed 'C:\Users\marsa\AppData\Local\Temp\lhue1h1o.bos\Versioned\BT2202a.dll' [14.4 ms]
+2025-05-13 19:10:42.299033 ; Package        ; Debug       ; Verifying package integrity...
+2025-05-13 19:10:42.326959 ; Package        ; Debug       ; Verified metadata integrity. [27.6 ms]
+2025-05-13 19:10:42.326959 ; Package        ; Debug       ; Verified archive integrity. [28.0 ms]
+2025-05-13 19:10:42.329950 ; PackageAction  ; Information ; OpenTAP plugin package 'BT2202a.0.2.0-alpha.TapPackage' containing 'BT2202a' successfully created.
+2025-05-13 19:10:42.331946 ; PackageAction  ; Information ; Installed 'BT2202a' (C:\Users\marsa\OneDrive\Documentos\BT2202A_Plugin-json_testing(MariosVersion)\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Packages\BT2202a\package.xml)
+2025-05-13 19:10:42.331946 ; CLI            ; Debug       ; CLI action returned exit code: 0 [1.38 s]

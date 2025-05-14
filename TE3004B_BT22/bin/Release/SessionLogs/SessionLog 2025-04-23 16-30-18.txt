@@ -1,0 +1,45 @@
+﻿2025-04-23 16:30:19.717488 ; Session        ; Debug       ; Session log loaded as 'C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\SessionLogs\tap 2025-04-23 16-30-18.txt'. [1.76 ms]
+2025-04-23 16:30:19.765476 ; Session        ; Debug       ; Running '"C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\tap.exe" tui' in 'C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release'.
+2025-04-23 16:30:19.814345 ; AssemblyFinder ; Debug       ; Found 17/38 assembly files. [15.9 ms]
+2025-04-23 16:30:19.860222 ; Resolver       ; Debug       ; Found match for System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Collections.Immutable.1.2.3.0\System.Collections.Immutable.dll
+2025-04-23 16:30:19.901023 ; Resolver       ; Debug       ; Found match for System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Reflection.Metadata.1.4.3.0\System.Reflection.Metadata.dll
+2025-04-23 16:30:20.058399 ; Searcher       ; Debug       ; Ordered 17 assemblies according to references. [173 ms]
+2025-04-23 16:30:20.150184 ; Searcher       ; Warning     ; Plugin with duplicate type name OpenTap.Plugins.PluginDevelopment.ScpiInstrumentExample defined in 'BT2202a' and 'BT2202A'
+2025-04-23 16:30:20.155171 ; PluginManager  ; Debug       ; Found 5 plugin assemblies containing 183 plugin types. [274 ms]
+2025-04-23 16:30:20.158164 ; PluginManager  ; Debug       ; Found version 9.26.1+3d268116  of OpenTap.dll
+2025-04-23 16:30:20.158164 ; PluginManager  ; Debug       ; Found version 0.0.0            of BT2202a.dll
+2025-04-23 16:30:20.158164 ; PluginManager  ; Debug       ; Found version 9.26.1+3d268116  of OpenTap.Package.dll
+2025-04-23 16:30:20.158164 ; PluginManager  ; Debug       ; Found version 0.0.0            of BT2202a.dll
+2025-04-23 16:30:20.158164 ; PluginManager  ; Debug       ; Found version 9.26.1+3d268116  of OpenTap.Plugins.BasicSteps.dll
+2025-04-23 16:30:20.158164 ; PluginManager  ; Debug       ; Searched 17 Assemblies. [278 ms]
+2025-04-23 16:30:20.175118 ; AssemblyData   ; Debug       ; Loaded OpenTap. [3.88 ms]
+2025-04-23 16:30:20.203044 ; SystemInfo     ; Debug       ; Microsoft Windows 10.0.19045 X64
+2025-04-23 16:30:20.203044 ; SystemInfo     ; Debug       ; .NET Framework 4.8.9310.0
+2025-04-23 16:30:20.204139 ; SystemInfo     ; Debug       ; OpenTAP Engine 9.26.1+3d268116 X64
+2025-04-23 16:30:20.221602 ; AssemblyData   ; Debug       ; Loaded OpenTap.Package. [17.6 ms]
+2025-04-23 16:30:20.230578 ; Settings       ; Debug       ; No settings file exists for EngineSettings. A new instance with default values has been created. [19.0 ms]
+2025-04-23 16:30:20.285433 ; Session        ; Debug       ; Session log loaded as 'C:\Users\marsa\Downloads\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\SessionLogs\SessionLog 2025-04-23 16-30-18.txt'. [18.2 ms]
+2025-04-23 16:30:20.300394 ; AssemblyData   ; Debug       ; Loaded OpenTap.Plugins.BasicSteps. [14.7 ms]
+2025-04-23 16:30:20.306377 ; tap            ; Error       ; "tap.exe tui" is not a recognized command.
+2025-04-23 16:30:20.309368 ; tap            ; Information ; OpenTAP Command Line Interface (9.26.1+3d268116)
+2025-04-23 16:30:20.309368 ; tap            ; Information ; Usage: "tap.exe <command> [<subcommand(s)>] [<args>]"
+2025-04-23 16:30:20.309368 ; tap            ; Information ; Valid commands are:
+2025-04-23 16:30:20.311363 ; tap            ; Information ; run                Run a test plan.
+2025-04-23 16:30:20.311363 ; tap            ; Information ; package            
+2025-04-23 16:30:20.311363 ; tap            ; Information ;    create          Create a package based on an XML description file.
+2025-04-23 16:30:20.311363 ; tap            ; Information ;    download        Download one or more packages.
+2025-04-23 16:30:20.311363 ; tap            ; Information ;    install         Install one or more packages.
+2025-04-23 16:30:20.311363 ; tap            ; Information ;    list            List locally installed packages and browse the online package repository.
+2025-04-23 16:30:20.311363 ; tap            ; Information ;    show            Show information about a package.
+2025-04-23 16:30:20.311363 ; tap            ; Information ;    test            Run tests on one or more packages.
+2025-04-23 16:30:20.311363 ; tap            ; Information ;    uninstall       Uninstall one or more packages.
+2025-04-23 16:30:20.311363 ; tap            ; Information ;    verify          Verify the integrity of one or all installed packages by checking their fingerprints.
+2025-04-23 16:30:20.311363 ; tap            ; Information ; sdk                
+2025-04-23 16:30:20.311363 ; tap            ; Information ;    gitversion      Calculate the semantic version number for a specific git commit.
+2025-04-23 16:30:20.311363 ; tap            ; Information ; image              
+2025-04-23 16:30:20.311363 ; tap            ; Information ;    install         Install the specified image, overwriting the existing installation.
+2025-04-23 16:30:20.311363 ; tap            ; Information ; Run "tap.exe <command> [<subcommand(s)>] -h" to get additional help for a specific command.
+2025-04-23 16:30:20.392260 ; AssemblyData   ; Debug       ; Loaded mscorlib. [900 ns]
+2025-04-23 16:30:20.667225 ; Installation   ; Debug       ; BT2202a                  - 0.2.0-alpha
+2025-04-23 16:30:20.667225 ; Installation   ; Debug       ; OpenTAP                  - 9.26.1+3d268116
+2025-04-23 16:30:20.667225 ; Installation   ; Debug       ; PathWave License Manager - 7.4.1+efeba870
