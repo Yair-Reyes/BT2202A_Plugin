@@ -103,7 +103,7 @@ We welcome contributions to further improve this project. For collaboration:
 
 ### Acknowledgments
 
-This project was developed by Ricardo Islas Guerra, Germán Alvarado De los Santos, and Cheyenne Rigel De Jesús González as part of the course TE3004B - Desarrollo de Telecomunicaciones y Sistemas Energéticos at Tec de Monterrey.
+This project was developed by , , and  as part of the course TE3004B - Desarrollo de Telecomunicaciones y Sistemas Energéticos at Tec de Monterrey.
 
 Special thanks to Pablo and the team at Keysight for their support and guidance.
 
