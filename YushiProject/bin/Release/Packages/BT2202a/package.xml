@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package InfoLink="" Date="06/09/2025 21:56:28" Name="BT2202a" Version="0.2.0-alpha" Architecture="AnyCPU" OS="Windows,Linux" xmlns="http://opentap.io/schemas/package">
+  <Hash>wHqF1br0aOL5dib2WhBonnL16vU</Hash>
+  <Description>This is my OpenTAP plugin package.</Description>
+  <Dependencies>
+    <PackageDependency Package="OpenTAP" Version="^9.27.1+49587562" />
+  </Dependencies>
+  <Files>
+    <File Path="Packages/BT2202a/BT2202a.dll">
+      <Plugins>
+        <Plugin Type="childStep.DurationTestStep" BaseType="Test Step">
+          <Name>Test</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Enables Pass/Fail.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>instrument</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="OpenTap.Plugins.PluginDevelopment.ScpiInstrumentExample" BaseType="Instrument">
+          <Name>BT2202A</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Equipo para carga y descarga</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>OpenTap.Plugins.Carga</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="BT2202a.Abort" BaseType="Test Step">
+          <Name>Abort</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Abort process</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>instrument</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="BT2202a.Charge" BaseType="Test Step">
+          <Name>Charge</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Charges a device with specified voltage and current for a set duration.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>instrument</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="BT2202a.Discharge" BaseType="Test Step">
+          <Name>Discharge</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Discharges a device with specified voltage and current for a set duration.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>instrument</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="BT2202a.Measure" BaseType="Test Step">
+          <Name>Measure</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>Measures voltage and current for step duration.</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>instrument</String>
+          </Groups>
+        </Plugin>
+        <Plugin Type="BT2202a.Reset" BaseType="Test Step">
+          <Name>Reset</Name>
+          <Order>-10000</Order>
+          <Browsable>true</Browsable>
+          <Description>resets</Description>
+          <Collapsed>false</Collapsed>
+          <Groups>
+            <String>instrument</String>
+          </Groups>
+        </Plugin>
+      </Plugins>
+      <Hash>07178A606000E9277FC72B2BD04984D6C6B2883F</Hash>
+    </File>
+  </Files>
+</Package>

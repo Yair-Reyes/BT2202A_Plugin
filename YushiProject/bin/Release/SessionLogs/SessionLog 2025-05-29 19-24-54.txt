@@ -1,0 +1,74 @@
+﻿2025-05-29 19:24:54.372818 ; Session        ; Debug       ; Session log loaded as 'C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\SessionLogs\tap 2025-05-29 19-24-54.txt'. [1.18 ms]
+2025-05-29 19:24:54.393662 ; Session        ; Debug       ; Deleting log file: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\SessionLogs\SessionLog 2025-05-29 18-18-56.txt
+2025-05-29 19:24:54.398429 ; Session        ; Debug       ; Running '.\tap  package create "C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\\package.xml" --install' in 'C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release'.
+2025-05-29 19:24:54.426095 ; AssemblyFinder ; Debug       ; Found 18/39 assembly files. [7.82 ms]
+2025-05-29 19:24:54.444705 ; Resolver       ; Debug       ; Found match for System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Collections.Immutable.1.2.3.0\System.Collections.Immutable.dll
+2025-05-29 19:24:54.544061 ; Resolver       ; Debug       ; Found match for System.Reflection.Metadata, Version=1.4.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a in C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Reflection.Metadata.1.4.3.0\System.Reflection.Metadata.dll
+2025-05-29 19:24:54.623644 ; Searcher       ; Debug       ; Ordered 18 assemblies according to references. [168 ms]
+2025-05-29 19:24:54.665081 ; Searcher       ; Warning     ; Plugin with duplicate type name OpenTap.Plugins.PluginDevelopment.ScpiInstrumentExample defined in 'BT2202a' and 'BT2202A'
+2025-05-29 19:24:54.668090 ; PluginManager  ; Debug       ; Found 5 plugin assemblies containing 184 plugin types. [215 ms]
+2025-05-29 19:24:54.669177 ; PluginManager  ; Debug       ; Found version 9.27.1+49587562  of OpenTap.dll
+2025-05-29 19:24:54.669177 ; PluginManager  ; Debug       ; Found version 0.0.0            of BT2202a.dll
+2025-05-29 19:24:54.669177 ; PluginManager  ; Debug       ; Found version 9.27.1+49587562  of OpenTap.Package.dll
+2025-05-29 19:24:54.669177 ; PluginManager  ; Debug       ; Found version 0.0.0            of BT2202a.dll
+2025-05-29 19:24:54.669177 ; PluginManager  ; Debug       ; Found version 9.27.1+49587562  of OpenTap.Plugins.BasicSteps.dll
+2025-05-29 19:24:54.669177 ; PluginManager  ; Debug       ; Searched 18 Assemblies. [217 ms]
+2025-05-29 19:24:54.676076 ; AssemblyData   ; Debug       ; Loaded OpenTap. [324 us]
+2025-05-29 19:24:54.685508 ; SystemInfo     ; Debug       ; Microsoft Windows 10.0.26100 X64
+2025-05-29 19:24:54.685508 ; SystemInfo     ; Debug       ; .NET Framework 4.8.9300.0
+2025-05-29 19:24:54.685508 ; SystemInfo     ; Debug       ; OpenTAP Engine 9.27.1+49587562 X64
+2025-05-29 19:24:54.688501 ; AssemblyData   ; Debug       ; Loaded OpenTap.Package. [2.75 ms]
+2025-05-29 19:24:54.696479 ; Settings       ; Debug       ; No settings file exists for EngineSettings. A new instance with default values has been created. [6.67 ms]
+2025-05-29 19:24:54.714702 ; AssemblyData   ; Debug       ; Loaded OpenTap.Plugins.BasicSteps. [3.86 ms]
+2025-05-29 19:24:54.726802 ; Session        ; Debug       ; Session log loaded as 'C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\SessionLogs\SessionLog 2025-05-29 19-24-54.txt'. [11.0 ms]
+2025-05-29 19:24:54.767360 ; AssemblyData   ; Debug       ; Loaded mscorlib. [500 ns]
+2025-05-29 19:24:54.826207 ; CLI            ; Debug       ; Executing CLI action: package \ create
+2025-05-29 19:24:54.836291 ; VariableExpander ; Debug       ; Initialized variable expander:
+2025-05-29 19:24:54.845242 ; Installation   ; Debug       ; BT2202a                  - 0.2.0-alpha
+2025-05-29 19:24:54.845242 ; Installation   ; Debug       ; OpenTAP                  - 9.27.1+49587562
+2025-05-29 19:24:54.845242 ; Installation   ; Debug       ; PathWave License Manager - 7.4.1+efeba870
+2025-05-29 19:24:54.849654 ; Package        ; Debug       ; Package preprocessing completed. [16.5 ms]
+2025-05-29 19:24:54.853042 ; Resolver       ; Debug       ; Found match for DotNet.Glob, Version=3.0.1.0, Culture=neutral, PublicKeyToken=b68cc888b4f632d1 in C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\DotNet.Glob.3.0.1.0\DotNet.Glob.dll
+2025-05-29 19:24:54.865194 ; Searcher       ; Warning     ; Multiple assemblies of different versions named Microsoft.Bcl.AsyncInterfaces exists 
+2025-05-29 19:24:54.865194 ; Searcher       ; Debug       ; Assembly 1: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll version: 4.700.19.46214
+2025-05-29 19:24:54.865194 ; Searcher       ; Debug       ; Assembly 2: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\Microsoft.Bcl.AsyncInterfaces.1.0.0.0\Microsoft.Bcl.AsyncInterfaces.dll version: 4.700.19.56404
+2025-05-29 19:24:54.866197 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Buffers exists 
+2025-05-29 19:24:54.866197 ; Searcher       ; Debug       ; Assembly 1: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Buffers.dll version: 4.6.26515.06
+2025-05-29 19:24:54.866197 ; Searcher       ; Debug       ; Assembly 2: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Buffers.4.0.3.0\System.Buffers.dll version: 4.6.28619.01
+2025-05-29 19:24:54.867200 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Memory exists 
+2025-05-29 19:24:54.867200 ; Searcher       ; Debug       ; Assembly 1: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Memory.dll version: 4.6.27617.02
+2025-05-29 19:24:54.867200 ; Searcher       ; Debug       ; Assembly 2: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Memory.4.0.1.1\System.Memory.dll version: 4.6.28619.01
+2025-05-29 19:24:54.868203 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Runtime.CompilerServices.Unsafe exists 
+2025-05-29 19:24:54.868203 ; Searcher       ; Debug       ; Assembly 1: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Runtime.CompilerServices.Unsafe.dll version: 4.700.19.46214
+2025-05-29 19:24:54.868203 ; Searcher       ; Debug       ; Assembly 2: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Runtime.CompilerServices.Unsafe.4.0.6.0\System.Runtime.CompilerServices.Unsafe.dll version: 4.700.20.12001
+2025-05-29 19:24:54.869206 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Text.Encodings.Web exists 
+2025-05-29 19:24:54.869206 ; Searcher       ; Debug       ; Assembly 1: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Text.Encodings.Web.dll version: 4.700.19.46214
+2025-05-29 19:24:54.869206 ; Searcher       ; Debug       ; Assembly 2: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Text.Encodings.Web.4.0.5.1\System.Text.Encodings.Web.dll version: 4.700.21.11602
+2025-05-29 19:24:54.870307 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Text.Json exists 
+2025-05-29 19:24:54.870307 ; Searcher       ; Debug       ; Assembly 1: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Text.Json.dll version: 4.700.19.46214
+2025-05-29 19:24:54.870307 ; Searcher       ; Debug       ; Assembly 2: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Text.Json.4.0.1.2\System.Text.Json.dll version: 4.700.20.21406
+2025-05-29 19:24:54.870812 ; Searcher       ; Warning     ; Multiple assemblies of different versions named System.Threading.Tasks.Extensions exists 
+2025-05-29 19:24:54.870812 ; Searcher       ; Debug       ; Assembly 1: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\System.Threading.Tasks.Extensions.dll version: 4.6.27129.04
+2025-05-29 19:24:54.870812 ; Searcher       ; Debug       ; Assembly 2: C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\System.Threading.Tasks.Extensions.4.2.0.1\System.Threading.Tasks.Extensions.dll version: 4.6.28619.01
+2025-05-29 19:24:54.876837 ; Searcher       ; Debug       ; Ordered 39 assemblies according to references. [12.9 ms]
+2025-05-29 19:24:54.933499 ; Package        ; Information ; Satisfying assembly reference to OpenTap by adding dependency on package OpenTAP
+2025-05-29 19:24:54.933499 ; Package        ; Information ; Satisfying assembly reference to System.Text.Json by adding dependency on package OpenTAP
+2025-05-29 19:24:54.933499 ; Package        ; Warning     ; Version of System.Text.Json in OpenTAP is different from the version referenced in this package (4.0.0.0 vs 4.0.1.2).
+2025-05-29 19:24:54.933499 ; Package        ; Warning     ; Consider changing your version of System.Text.Json to 4.0.1.2 to match that in OpenTAP.
+2025-05-29 19:24:54.933499 ; Package        ; Information ; Satisfying assembly reference to System by adding dependency on package OpenTAP
+2025-05-29 19:24:54.933499 ; Package        ; Information ; Adding dependency on package 'OpenTAP' version 9.27.1+49587562
+2025-05-29 19:24:54.940830 ; Package        ; Debug       ; Using temporary folder at 'C:\Users\cesar\AppData\Local\Temp\xysby5s3.lqy'
+2025-05-29 19:24:54.943865 ; Package        ; Debug       ; Updating version info for 'BT2202a.dll' [1.15 ms]
+2025-05-29 19:24:54.949002 ; Resolver       ; Debug       ; Found match for Mono.Cecil, Version=0.10.1.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e in C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Dependencies\Mono.Cecil.0.10.1.0\Mono.Cecil.dll
+2025-05-29 19:24:55.350580 ; Package        ; Information ; Updated assembly version info using Mono method. [407 ms]
+2025-05-29 19:24:55.355567 ; Package        ; Debug       ; Available custom actions for 'create' stage. (2 actions: OpenTap.Package.IncludePackageDependencies, OpenTap.Package.FileHashPackageAction)
+2025-05-29 19:24:55.357563 ; Package        ; Information ; Package action IncludePackageDependencies completed [1.92 ms]
+2025-05-29 19:24:55.427071 ; Package        ; Information ; Package action FileHashPackageAction completed [69.4 ms]
+2025-05-29 19:24:55.427071 ; Package        ; Information ; Creating OpenTAP package.
+2025-05-29 19:24:55.441113 ; Package        ; Debug       ; Compressed 'C:\Users\cesar\AppData\Local\Temp\xysby5s3.lqy\Versioned\BT2202a.dll' [9.77 ms]
+2025-05-29 19:24:55.489491 ; Package        ; Debug       ; Verifying package integrity...
+2025-05-29 19:24:55.510626 ; Package        ; Debug       ; Verified metadata integrity. [21.1 ms]
+2025-05-29 19:24:55.510626 ; Package        ; Debug       ; Verified archive integrity. [21.3 ms]
+2025-05-29 19:24:55.512621 ; PackageAction  ; Information ; OpenTAP plugin package 'BT2202a.0.2.0-alpha.TapPackage' containing 'BT2202a' successfully created.
+2025-05-29 19:24:55.515041 ; PackageAction  ; Information ; Installed 'BT2202a' (C:\Users\cesar\OneDrive\Escritorio\BT2202A_Plugin-json_testing\BT2202A_Plugin-json_testing\YushiProject\bin\Release\Packages\BT2202a\package.xml)
+2025-05-29 19:24:55.515041 ; CLI            ; Debug       ; CLI action returned exit code: 0 [688 ms]
