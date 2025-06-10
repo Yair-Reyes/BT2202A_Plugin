@@ -1,7 +1,5 @@
 # BT2202A TAP Plugin for Keysight Instruments
 
-![Keysight Logo](Plot_Data_/WindowsFormsApp1_testCSV/Keysight_logo.png)
-
 ## 📝 Overview
 
 This OpenTAP plugin provides advanced automation for **Keysight's BT2202A Charge-Discharge System** - a specialized instrument for Li-ion cell formation and testing. The plugin transforms the BT2202A into a programmable testing platform with sophisticated sequence capabilities for battery research, development, and production.
@@ -42,9 +40,10 @@ This OpenTAP plugin provides advanced automation for **Keysight's BT2202A Charge
 ## 💻 Requirements
 
 ### Development Environment
-- **Visual Studio** 2022 or later
-- **.NET Framework** 4.7.2 or higher
+- **Visual Studio** 2019 
+- **.NET Framework** 5.0.408 
 - **OpenTAP** framework (latest version)
+- **Keysight Pathwave Test Automation (BTA)** 
 
 ### Hardware Requirements
 - **Keysight BT2202A** instrument with SCPI command support
@@ -104,5 +103,17 @@ Contributions are welcome! Please follow these steps:
 This project is licensed under the Apache License 2.0 - see the LICENSE file for details.
 
 ---
+## Acknowledgements
+
+This project was made possible through the collaboration between Tecnológico de Monterrey and Keysight Technologies. Special thanks to Pablo Bernal, Keysight Engineer, and Cheyenne Rigel de Jesús's team for their previous solution and invaluable support.
+
+## Authors
 
 *Developed by the BT2202A Plugin Development Team © 2025*
+
+- **Sánchez M.** - Tecnológico de Monterrey
+- **Martínez C.** - Tecnológico de Monterrey
+- **Hofmann S.** - Tecnológico de Monterrey
+- **Cantú E.** - Tecnológico de Monterrey
+- **Reyes Y.** - Tecnológico de Monterrey
+- **González S.** - Tecnológico de Monterrey
